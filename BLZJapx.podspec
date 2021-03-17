@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
-  s.name             = 'Japx'
-  s.version          = '3.0.0'
+  s.name             = 'BLZJapx'
+  s.version          = '3.0.1'
   s.summary          = 'Lightweight JSON:API parser.'
 
 # This description is used to generate tags and improve search results.
@@ -15,16 +15,17 @@ Lightweight JSON:API parser that flattens complex JSON:API structure and turns i
 It works by transfering Dictionary to Dictionary, so you can use Codable, Unbox, Wrap, ObjectMapper, or any other object mapping tool that you preffer.
                        DESC
 
-  s.homepage         = 'https://github.com/infinum/Japx'
+  s.homepage         = 'https://github.com/balzo-tech/Japx'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Infinum' => 'ios@infinum.hr', 'Vlaho Poluta' => 'vlaho.poluta@infinum.hr', 'Filip Gulan' => 'filip.gulan@infinum.hr' }
-  s.source           = { :git => 'https://github.com/infinum/Japx.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/balzo-tech/Japx.git', :tag => s.version.to_s }
 
   s.requires_arc = true
   s.platform = :ios, :osx
   s.ios.deployment_target = '10.0'
   s.osx.deployment_target = '10.12'
   s.swift_version = '5.0'
+  s.module_name = 'Japx'
 
   s.default_subspec = 'Core'
 
@@ -35,62 +36,62 @@ It works by transfering Dictionary to Dictionary, so you can use Codable, Unbox,
 
   s.subspec 'Codable' do |sp| 
     sp.source_files = 'Japx/Classes/Codable/**/*'
-    sp.dependency 'Japx/Core'
+    sp.dependency 'BLZJapx/Core'
   end
 
   s.subspec 'Alamofire' do |sp| 
     sp.source_files = 'Japx/Classes/Alamofire/**/*'
-    sp.dependency 'Japx/Core'
+    sp.dependency 'BLZJapx/Core'
     sp.dependency 'Alamofire', '~> 5.0'
   end
 
   s.subspec 'RxAlamofire' do |sp| 
     sp.source_files = 'Japx/Classes/RxAlamofire/**/*'
-    sp.dependency 'Japx/Alamofire'
+    sp.dependency 'BLZJapx/Alamofire'
     sp.dependency 'RxSwift', '~> 5.0'
   end
 
   s.subspec 'CodableAlamofire' do |sp| 
     sp.source_files = 'Japx/Classes/CodableAlamofire/**/*'
-    sp.dependency 'Japx/Alamofire'
-    sp.dependency 'Japx/Codable'
+    sp.dependency 'BLZJapx/Alamofire'
+    sp.dependency 'BLZJapx/Codable'
   end
 
   s.subspec 'RxCodableAlamofire' do |sp| 
     sp.source_files = 'Japx/Classes/RxCodableAlamofire/**/*'
-    sp.dependency 'Japx/CodableAlamofire'
-    sp.dependency 'Japx/RxAlamofire'
+    sp.dependency 'BLZJapx/CodableAlamofire'
+    sp.dependency 'BLZJapx/RxAlamofire'
   end
   
   s.subspec 'Moya' do |sp|
     sp.source_files = 'Japx/Classes/Moya/**/*'
-    sp.dependency 'Japx/Core'
+    sp.dependency 'BLZJapx/Core'
     sp.dependency 'Moya/Core', '~> 14.0'
   end
   
   s.subspec 'RxMoya' do |sp|
     sp.source_files = 'Japx/Classes/RxMoya/**/*'
-    sp.dependency 'Japx/Moya'
+    sp.dependency 'BLZJapx/Moya'
     sp.dependency 'Moya/RxSwift', '~> 14.0'
   end
   
   s.subspec 'CodableMoya' do |sp|
     sp.source_files = 'Japx/Classes/CodableMoya/**/*'
-    sp.dependency 'Japx/Core'
-    sp.dependency 'Japx/Codable'
-    sp.dependency 'Japx/Moya'
+    sp.dependency 'BLZJapx/Core'
+    sp.dependency 'BLZJapx/Codable'
+    sp.dependency 'BLZJapx/Moya'
   end
   
   s.subspec 'RxCodableMoya' do |sp|
       sp.source_files = 'Japx/Classes/RxCodableMoya/**/*'
-      sp.dependency 'Japx/Core'
-      sp.dependency 'Japx/CodableMoya'
-      sp.dependency 'Japx/RxMoya'
+      sp.dependency 'BLZJapx/Core'
+      sp.dependency 'BLZJapx/CodableMoya'
+      sp.dependency 'BLZJapx/RxMoya'
   end
 
   s.subspec 'ObjC' do |sp|
       sp.source_files = 'Japx/Classes/ObjC/**/*'
-      sp.dependency 'Japx/Core'
+      sp.dependency 'BLZJapx/Core'
   end
 
 end
